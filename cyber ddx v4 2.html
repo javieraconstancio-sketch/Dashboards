@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DDX · Audiencias Cyber 2026 · L'Oréal Chile</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:  #050709;
+  --dark:   #0A0E14;
+  --panel:  #0D1320;
+  --panel2: #111827;
+  --blue:   #1A6FFF;
+  --blue-l: #4D94FF;
+  --cyan:   #00D4FF;
+  --white:  #F0F4FF;
+  --gray:   #8A9BB5;
+  --gray-d: #3A4557;
+  --green:  #00E5A0;
+  --gold:   #C9A84C;
+  --pink:   #E91E8C;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-weight:300;font-size:16px;overflow-x:hidden;cursor:none}
+
+.cursor{width:8px;height:8px;background:var(--pink);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
+.cursor-ring{width:32px;height:32px;border:1px solid rgba(233,30,140,.45);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+#particles{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.3}
+.page{position:relative;z-index:1}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:5rem 5vw 4rem;position:relative;overflow:hidden;border-bottom:1px solid var(--gray-d)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 15% 55%,rgba(233,30,140,.10) 0%,transparent 65%),radial-gradient(ellipse 45% 40% at 85% 25%,rgba(26,111,255,.07) 0%,transparent 60%)}
+.hero-top{position:absolute;top:2.5rem;right:5vw;text-align:right;opacity:0;animation:fadeIn 1s .6s forwards}
+.hero-top .logo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:.15em}
+.hero-top .period{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--gray);letter-spacing:.2em;margin-top:.3rem}
+.eyebrow{font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.28em;color:var(--pink);text-transform:uppercase;margin-bottom:1.2rem;opacity:0;animation:fadeUp .8s .15s forwards;display:flex;align-items:center;gap:.8rem}
+.eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--pink)}
+.hero-h{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(4rem,11vw,9.5rem);line-height:.88;letter-spacing:-.02em;text-transform:uppercase;opacity:0;animation:fadeUp .9s .3s forwards}
+.hero-h .outline{color:transparent;-webkit-text-stroke:2px var(--pink);display:block}
+.hero-h .solid{color:var(--white);font-size:clamp(2rem,4.5vw,4rem);font-weight:700;display:block;margin-top:.15em}
+.hero-h .solid em{color:var(--blue-l);font-style:normal}
+.hero-sub{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-style:italic;font-size:clamp(1rem,2vw,1.5rem);color:var(--gray);margin-top:1.5rem;max-width:540px;opacity:0;animation:fadeUp .9s .5s forwards}
+.hero-types{display:flex;gap:0;margin-top:2rem;border:1px solid var(--gray-d);width:fit-content;opacity:0;animation:fadeUp .9s .65s forwards}
+.htype{padding:.75rem 1.6rem;border-right:1px solid var(--gray-d);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(.9rem,1.8vw,1.2rem);letter-spacing:.08em;text-transform:uppercase;display:flex;flex-direction:column;cursor:default;transition:background .2s}
+.htype:last-child{border-right:none}
+.htype:hover{background:rgba(233,30,140,.07)}
+.htype .ht{color:var(--pink)}
+.htype .hd{font-family:'Barlow',sans-serif;font-weight:300;font-size:.58rem;letter-spacing:.12em;color:var(--white);margin-top:.25rem;text-transform:uppercase}
+.scroll-hint{position:absolute;bottom:1.8rem;right:5vw;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--gray);display:flex;align-items:center;gap:.5rem;animation:pulse 2.5s infinite}
+.scroll-hint::after{content:'';display:block;width:1px;height:36px;background:linear-gradient(to bottom,var(--pink),transparent)}
+
+/* LAYOUT */
+section{padding:5rem 5vw;border-bottom:1px solid var(--gray-d);position:relative}
+section::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(to bottom,var(--pink),transparent 55%);pointer-events:none}
+.sec-label{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.28em;color:var(--pink);text-transform:uppercase;margin-bottom:.5rem;display:flex;align-items:center;gap:.7rem}
+.sec-label::before{content:'';display:block;width:18px;height:1px;background:var(--pink)}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1;text-transform:uppercase;margin-bottom:2rem}
+.sec-title em{color:var(--pink);font-style:normal}
+.div-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--gray-d);flex-wrap:wrap;gap:1rem}
+.div-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3rem,7vw,5.5rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--pink);text-transform:uppercase}
+.div-info{font-size:.9rem;color:var(--white);max-width:380px;line-height:1.6;text-align:right}
+.rule{width:100%;height:1px;background:linear-gradient(90deg,var(--pink),transparent);margin:2rem 0}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* INSIGHT */
+.insight{border-left:3px solid var(--pink);padding:1.4rem 1.8rem;background:rgba(233,30,140,.06);margin:2rem 0;position:relative}
+.insight::before{content:'"';font-family:'Barlow Condensed',sans-serif;font-size:5rem;font-weight:900;color:rgba(233,30,140,.12);position:absolute;top:-.8rem;left:.8rem;line-height:1;pointer-events:none}
+.insight p{font-size:1rem;line-height:1.7;color:var(--white);position:relative;z-index:1}
+
+/* CONTEXT BOX */
+.ctx{background:rgba(26,111,255,.05);border-left:3px solid var(--blue);padding:1.2rem 1.6rem;margin-bottom:2rem}
+.ctx p{font-size:.88rem;line-height:1.75;color:var(--white)}
+.ctx p em{color:var(--pink);font-style:italic}
+
+/* PILLS */
+.pill{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.14em;padding:.28rem .8rem;border:1px solid var(--gray-d);color:var(--white);text-transform:uppercase}
+.pill.m{border-color:rgba(26,111,255,.4);color:var(--blue-l)}
+.pill.g{border-color:rgba(0,229,160,.3);color:var(--green)}
+.pill.d{border-color:rgba(201,168,76,.3);color:var(--gold)}
+
+/* TABS */
+.tab-nav{display:flex;gap:0;border:1px solid var(--gray-d);width:fit-content;margin-bottom:2rem;overflow:hidden}
+.tab-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;padding:.7rem 1.4rem;background:var(--panel);color:var(--white);border:none;border-right:1px solid var(--gray-d);cursor:pointer;transition:all .2s;white-space:nowrap}
+.tab-btn:last-child{border-right:none}
+.tab-btn:hover{background:rgba(233,30,140,.08)}
+.tab-btn.active{background:var(--pink);color:var(--white)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+
+/* METRIC CARDS */
+.metric-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--gray-d);border:1px solid var(--gray-d);margin-bottom:2.5rem}
+.mc{background:var(--panel);padding:1.6rem 1.5rem;position:relative;overflow:hidden;transition:background .25s;cursor:default}
+.mc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--pink),var(--blue-l));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.mc:hover::before{transform:scaleX(1)}
+.mc:hover{background:#101828}
+.mc-badge{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.mc-badge.pk{color:var(--pink)}.mc-badge.gr{color:var(--green)}.mc-badge.bl{color:var(--blue-l)}.mc-badge.gd{color:var(--gold)}
+.mc-badge::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor}
+.mc-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.4rem,4.5vw,3.6rem);line-height:1;margin-bottom:.3rem}
+.mc-val.pk{color:var(--pink)}.mc-val.gr{color:var(--green)}.mc-val.bl{color:var(--blue-l)}.mc-val.gd{color:var(--gold)}
+.mc-lbl{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.14em;color:var(--white);text-transform:uppercase;margin-bottom:.8rem}
+.mc-compare{padding-top:.8rem;border-top:1px solid var(--gray-d);display:flex;flex-direction:column;gap:.25rem}
+.mc-compare span{font-family:'DM Mono',monospace;font-size:.65rem;color:var(--white)}
+.mc-compare .v1{color:var(--pink)}
+.mc-compare .v2{color:var(--white);opacity:.5}
+.mc-delta{display:inline-flex;align-items:center;gap:.3rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;padding:.2rem .6rem;border-radius:2px;margin-bottom:.4rem}
+.mc-delta.up{background:rgba(0,229,160,.12);color:var(--green);border:1px solid rgba(0,229,160,.25)}
+.mc-delta.dn{background:rgba(233,30,140,.12);color:var(--pink);border:1px solid rgba(233,30,140,.25)}
+
+/* HORIZONTAL BAR CHART */
+.hbar-chart{display:flex;flex-direction:column;gap:.6rem;padding:.4rem 0}
+.hbar-row{display:grid;grid-template-columns:38px 1fr 54px;align-items:center;gap:.6rem}
+.hbar-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.06em;color:var(--white);text-transform:uppercase;text-align:right}
+.hbar-track{height:24px;background:rgba(58,69,87,.4);border-radius:2px;position:relative;overflow:visible}
+.hbar-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,#0A3A8A,var(--blue-l));width:0;transition:width 1.1s cubic-bezier(.4,0,.2,1);position:relative}
+.hbar-ctr{position:absolute;right:-2px;top:50%;transform:translateY(-50%);width:8px;height:8px;background:var(--pink);border-radius:50%;border:2px solid var(--black);z-index:2}
+.hbar-ctr-label{position:absolute;right:-48px;top:50%;transform:translateY(-50%);font-family:'DM Mono',monospace;font-size:.68rem;color:var(--pink);font-weight:400;white-space:nowrap}
+.hbar-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white);text-align:left}
+.chart-card{background:var(--panel);border:1px solid var(--gray-d);padding:1.6rem}
+.chart-card-h{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.2em;color:var(--pink);text-transform:uppercase;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+.chart-legend-row{display:flex;gap:1.2rem;margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--gray-d)}
+.leg{display:flex;align-items:center;gap:.4rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.1em;color:var(--white);text-transform:uppercase}
+.leg-b{width:12px;height:7px;background:var(--blue-l);border-radius:1px;opacity:.5}
+.leg-d{width:8px;height:8px;background:var(--pink);border-radius:50%;border:1.5px solid var(--black)}
+
+/* VS GRID */
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-d);border:1px solid var(--gray-d);margin:1.5rem 0}
+.vs-cell{background:var(--dark);padding:1.4rem 1.2rem;text-align:center;position:relative}
+.vs-cell.winner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--pink)}
+.vs-cell.loser::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gray-d)}
+.vs-type{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--white);text-transform:uppercase;margin-bottom:.5rem}
+.vs-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.6rem;line-height:1;margin-bottom:.2rem}
+.vs-num.pk{color:var(--pink)}.vs-num.gg{color:var(--gray-d)}
+.vs-sub{font-size:.78rem;color:var(--white);line-height:1.5}
+
+/* BRAND GRID */
+.brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-d);border:1px solid var(--gray-d);margin:1.5rem 0}
+.brand-cell{background:var(--panel2);padding:1.5rem}
+.brand-h{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.3rem;gap:.5rem}
+.brand-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.2rem;color:var(--white);text-transform:uppercase;letter-spacing:.05em}
+.brand-tag{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.12em;color:var(--white);opacity:.6;text-transform:uppercase;margin-bottom:1rem}
+.bstat-row{display:flex;gap:.5rem;margin-bottom:.8rem;flex-wrap:wrap}
+.bstat{background:var(--panel);border:1px solid var(--gray-d);padding:.5rem .8rem;flex:1;min-width:80px}
+.bstat .bsv{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;line-height:1}
+.bstat .bsl{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--white);opacity:.6;text-transform:uppercase;margin-top:.15rem}
+.best-aud{font-size:.8rem;color:var(--white);line-height:1.6;padding-top:.8rem;border-top:1px solid var(--gray-d)}
+
+/* ── D2C PURCHASE BLOCK ── */
+.d2c-block{background:var(--dark);border:1px solid var(--gray-d);margin:2rem 0;position:relative;overflow:hidden}
+.d2c-block::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pink),var(--gold),var(--green))}
+.d2c-inner{display:grid;grid-template-columns:1fr 1fr 1fr 1.8fr;gap:1px;background:var(--gray-d)}
+.d2c-stat{background:var(--dark);padding:1.8rem 1.4rem;text-align:center}
+.d2c-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3rem;line-height:1;margin-bottom:.3rem}
+.d2c-lbl{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;color:var(--white);text-transform:uppercase}
+.d2c-sub{font-size:.78rem;color:var(--white);opacity:.6;margin-top:.3rem}
+.d2c-note{background:var(--dark);padding:1.8rem 1.4rem;display:flex;align-items:center}
+.d2c-note p{font-size:.85rem;color:var(--white);line-height:1.7}
+.d2c-note p strong{color:var(--pink)}
+
+/* ── BEST PRACTICES — PROMINENT ── */
+.bp-section{margin-top:2.5rem}
+.bp-section-label{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.28em;color:var(--pink);text-transform:uppercase;margin-bottom:1rem;padding:.6rem 1rem;background:rgba(233,30,140,.08);border:1px solid rgba(233,30,140,.2);display:inline-flex;align-items:center;gap:.6rem}
+.bp-section-label::before{content:'★';font-size:.8rem}
+.bp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--gray-d);border:1px solid var(--gray-d)}
+.bp{background:var(--dark);padding:1.8rem;position:relative;overflow:hidden;transition:background .25s}
+.bp:hover{background:#0f1a28}
+.bp::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pink),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.bp:hover::before{transform:scaleX(1)}
+.bp-t{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--pink);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem;padding-bottom:.7rem;border-bottom:1px solid rgba(233,30,140,.25)}
+.bp ul{list-style:none}
+.bp ul li{font-size:.88rem;color:var(--white);line-height:1.65;margin-bottom:.6rem;padding-left:1rem;position:relative}
+.bp ul li::before{content:'→';color:var(--pink);position:absolute;left:0;font-size:.7rem;top:.05rem}
+
+/* INTERACTIVE COMPARE TOOL */
+.compare-tool{background:var(--panel);border:1px solid var(--gray-d);padding:2rem;margin:2rem 0}
+.compare-tool-h{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.4rem;text-transform:uppercase;color:var(--white);margin-bottom:.3rem}
+.compare-tool-sub{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--white);opacity:.6;text-transform:uppercase;margin-bottom:1.5rem}
+.compare-selectors{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.csel{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 1.1rem;background:var(--dark);border:1px solid var(--gray-d);color:var(--white);cursor:pointer;transition:all .2s}
+.csel:hover{border-color:var(--pink)}
+.csel.active{background:var(--pink);border-color:var(--pink)}
+.compare-display{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-d);border:1px solid var(--gray-d)}
+.compare-side{background:var(--dark);padding:1.5rem}
+.compare-side-label{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--white);text-transform:uppercase;margin-bottom:1rem}
+.compare-metric{margin-bottom:1rem}
+.cm-name{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.12em;color:var(--white);opacity:.5;text-transform:uppercase;margin-bottom:.2rem}
+.cm-bar-wrap{height:10px;background:rgba(58,69,87,.4);border-radius:2px;margin-bottom:.3rem;overflow:hidden}
+.cm-bar{height:100%;border-radius:2px;transition:width 1s cubic-bezier(.4,0,.2,1)}
+.cm-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;color:var(--white)}
+#compare-insight{margin-top:1rem;font-family:'DM Mono',monospace;font-size:.65rem;color:var(--white);opacity:.6;letter-spacing:.08em}
+
+/* CPD AWARENESS BRAND GRID */
+.awareness-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--gray-d);border:1px solid var(--gray-d);margin:1.5rem 0}
+.aw-cell{background:var(--panel2);padding:1.4rem 1rem;text-align:center;position:relative;transition:background .2s}
+.aw-cell:hover{background:#101828}
+.aw-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue-l),var(--cyan))}
+.aw-brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;color:var(--white);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.8rem}
+.aw-stat{margin-bottom:.6rem}
+.aw-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;line-height:1}
+.aw-lbl{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.12em;color:var(--white);opacity:.6;text-transform:uppercase;margin-top:.1rem}
+.aw-placeholder{font-family:'DM Mono',monospace;font-size:.62rem;color:var(--gray-d);letter-spacing:.1em;border:1px dashed var(--gray-d);padding:.4rem .6rem;margin-top:.6rem;text-align:center}
+
+/* SIDE NAV */
+.side-nav{position:fixed;right:1.8rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.6rem;z-index:100}
+.side-nav a{display:block;width:6px;height:6px;border-radius:50%;background:var(--gray-d);transition:background .25s,transform .25s}
+.side-nav a.active,.side-nav a:hover{background:var(--pink);transform:scale(1.8)}
+
+footer{padding:2.5rem 5vw;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--gray-d);flex-wrap:wrap;gap:1rem}
+footer .fl{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.15em}
+footer .fr{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.16em;color:var(--white);opacity:.4;text-align:right}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+@media(max-width:860px){.brand-grid,.compare-display,.vs-grid{grid-template-columns:1fr}.awareness-grid{grid-template-columns:repeat(2,1fr)}.d2c-inner{grid-template-columns:1fr 1fr}.side-nav{display:none}}
+@media(max-width:600px){body{font-size:14px}.awareness-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cring"></div>
+
+<nav class="side-nav">
+  <a href="#hero"    title="Inicio"></a>
+  <a href="#resumen" title="Resumen"></a>
+  <a href="#cpd"     title="CPD"></a>
+  <a href="#ldb"     title="LDB"></a>
+  <a href="#dpp"     title="DPP"></a>
+  <a href="#lujo"    title="LUJO"></a>
+</nav>
+
+<div class="page">
+
+<!-- HERO -->
+<section class="hero" id="hero" style="border-bottom:1px solid var(--gray-d)">
+  <div class="hero-top"><div class="logo">L'ORÉAL CHILE</div><div class="period">MAYO / JUNIO · 2026</div></div>
+  <div class="eyebrow">DDX · Data &amp; Digital Experience · Cyber 2026</div>
+  <h1 class="hero-h">
+    <span class="outline">CYBER</span>
+    <div class="hero-types">
+      <div class="htype"><span class="ht">0P</span><span class="hd">Base CRM propia</span></div>
+      <div class="htype"><span class="ht">1P</span><span class="hd">Sitio web · eventos</span></div>
+      <div class="htype"><span class="ht">FR</span><span class="hd">Fishing Rules cross-brand</span></div>
+      <div class="htype"><span class="ht">2P</span><span class="hd">Audiencias externas</span></div>
+    </div>
+    <span class="solid">Audiencias <em>1PD</em></span>
+  </h1>
+  <p class="hero-sub">Por qué las bases propias rinden mejor — CPD · LDB · DPP · LUJO D2C · Meta · Google Ads · DV360</p>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- RESUMEN -->
+<section id="resumen">
+  <div class="sec-label rv">Resumen Ejecutivo</div>
+  <h2 class="sec-title rv">La data propia<br><em>siempre gana</em></h2>
+
+  <div class="ctx rv d1">
+    <p>En Cyber, las audiencias <strong>0P y 1P superaron a las 2P en CTR en todas las divisiones</strong>. Los usuarios de la base propia ya conocen las marcas — su intención es real. Las 2P son útiles para <strong>escalar y nutrir</strong> la base, no para convertir. <em>Esta distinción es la clave del modelo.</em></p>
+  </div>
+
+  <div class="compare-tool rv d1">
+    <div class="compare-tool-h">Comparador Interactivo · 1P vs 2P</div>
+    <div class="compare-tool-sub">Selecciona una división para ver el impacto de la data propia</div>
+    <div class="compare-selectors">
+      <button class="csel active" onclick="showCompare('ldb',this)">LDB</button>
+      <button class="csel" onclick="showCompare('dpp',this)">DPP</button>
+      <button class="csel" onclick="showCompare('lujo',this)">LUJO D2C</button>
+    </div>
+    <div class="compare-display" id="compare-display"></div>
+    <div id="compare-insight"></div>
+  </div>
+
+  <div class="rule rv d2"></div>
+  <div class="sec-label rv d2">Highlights del Cyber · Por División</div>
+  <div class="metric-row rv d2">
+    <div class="mc"><div class="mc-badge pk">LDB · 0P Meta</div><div class="mc-delta up">↑ CTR top</div><div class="mc-val pk">2,15%</div><div class="mc-lbl">CTR · 0P · La Roche-Posay</div><div class="mc-compare"><span class="v1">1P avg → 1,84% CTR · $0,12 CPC</span><span class="v2">2P → 0,3% CTR (awareness)</span></div></div>
+    <div class="mc"><div class="mc-badge pk">DPP · Google</div><div class="mc-delta up">↑ Demand Gen</div><div class="mc-val pk">3,58%</div><div class="mc-lbl">CTR · 0P · Demand Gen</div><div class="mc-compare"><span class="v1">1P Google → 3,25% · $0,15 CPC</span><span class="v2">FR CeraVe→LOP 3,01% CTR</span></div></div>
+    <div class="mc"><div class="mc-badge pk">LUJO · Meta</div><div class="mc-delta up">↑ Alto valor</div><div class="mc-val pk">2,37%</div><div class="mc-lbl">CTR · 0P · BBDD compradores</div><div class="mc-compare"><span class="v1">1P → 4,4% CTR · $0,14 CPC</span><span class="v2">70% mejor CTR que 2P</span></div></div>
+    <div class="mc"><div class="mc-badge gr">LUJO · Google Search</div><div class="mc-delta up">↑ Récord Cyber</div><div class="mc-val gr">17%</div><div class="mc-lbl">CTR · 1P · Lancôme Search</div><div class="mc-compare"><span class="v1">1P Google → 6,28% CTR</span><span class="v2">Mayor registro del Cyber</span></div></div>
+  </div>
+
+  <div class="rule rv d3"></div>
+  <div class="sec-label rv d3">Por qué funciona la data propia</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--gray-d);border:1px solid var(--gray-d);margin-bottom:2rem" class="rv d3">
+    <div style="background:var(--dark);padding:1.5rem 1.4rem"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:var(--pink);margin-bottom:.4rem">0P</div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white);text-transform:uppercase;margin-bottom:.5rem">Base CRM Propia</div><div style="font-size:.82rem;color:var(--white);line-height:1.65;opacity:.8">Emails y datos de clientes reales de L'Oréal. Usuarios que ya compraron, se registraron o interactuaron con la marca. <strong style="color:var(--white);opacity:1">Mayor intención de compra.</strong></div></div>
+    <div style="background:var(--dark);padding:1.5rem 1.4rem"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:var(--pink);margin-bottom:.4rem">1P</div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white);text-transform:uppercase;margin-bottom:.5rem">Visitantes del Sitio</div><div style="font-size:.82rem;color:var(--white);line-height:1.65;opacity:.8">Usuarios que visitaron páginas de producto, añadieron al carrito o vieron contenido. Señales de comportamiento real. <strong style="color:var(--white);opacity:1">Mid/lower funnel.</strong></div></div>
+    <div style="background:var(--dark);padding:1.5rem 1.4rem"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:var(--blue-l);margin-bottom:.4rem">FR</div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white);text-transform:uppercase;margin-bottom:.5rem">Fishing Rules</div><div style="font-size:.82rem;color:var(--white);line-height:1.65;opacity:.8">Cruces entre marcas con afinidad comprobada. Ej: visitantes de Kiehl's hacia SkinCeuticals. <strong style="color:var(--white);opacity:1">Amplía alcance con calidad.</strong></div></div>
+    <div style="background:var(--dark);padding:1.5rem 1.4rem;opacity:.55"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:var(--gray-d);margin-bottom:.4rem">2P</div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white);text-transform:uppercase;margin-bottom:.5rem">Audiencias Externas</div><div style="font-size:.82rem;color:var(--white);line-height:1.65">Segmentos por intereses de terceros. Útiles para escalar y nutrir la base 1P. <strong style="color:var(--white)">Awareness, no conversión.</strong></div></div>
+  </div>
+</section>
+
+<!-- CPD -->
+<section id="cpd">
+  <div class="div-header">
+    <div><div class="sec-label">División</div><div class="div-name">CPD</div></div>
+    <div class="div-info">Consumer Products<br>L'Oréal Paris · Garnier · Maybelline · NYX · Vogue</div>
+  </div>
+
+  <div class="ctx rv">
+    <p>En CPD, la estrategia de Cyber se centró en <strong>amplificación de awareness</strong> con las 5 marcas de la división. Las campañas priorizaron <strong>impresiones y alcance</strong> como objetivo principal, usando las audiencias para maximizar la cobertura. Los datos de impresiones y CTR por marca <em>serán actualizados en cuanto llegue la información de la agencia.</em></p>
+  </div>
+
+  <div class="metric-row rv d1">
+    <div class="mc"><div class="mc-badge bl">Impresiones</div><div class="mc-delta up">↑ Amplificación</div><div class="mc-val bl">15,5M</div><div class="mc-lbl">15.544.561 impresiones totales</div><div class="mc-compare"><span class="v1">5 marcas · Meta + Google Ads</span><span class="v2">Derivación a Salco, Meli y Preunic</span></div></div>
+    <div class="mc"><div class="mc-badge gr">Alcance</div><div class="mc-delta up">↑ Personas únicas</div><div class="mc-val gr">4,67M</div><div class="mc-lbl">4.674.020 personas alcanzadas</div><div class="mc-compare"><span class="v1">Cobertura awareness division</span></div></div>
+    <div class="mc"><div class="mc-badge gd">CPM</div><div class="mc-delta up">↑ Eficiente</div><div class="mc-val gd">$1,56</div><div class="mc-lbl">Costo por 1.000 impresiones</div><div class="mc-compare"><span class="v1">USD · Promedio división</span></div></div>
+    <div class="mc"><div class="mc-badge bl">Retail Destino</div><div class="mc-val bl" style="font-size:1.6rem;margin-top:.4rem">Salco · Meli · Preunic</div><div class="mc-lbl">Derivación al sitio de retails</div><div class="mc-compare"><span class="v1">Objetivo: tráfico a punto de venta</span></div></div>
+  </div>
+
+  <div class="sec-label rv d1" style="margin-bottom:1rem">5 Marcas · Awareness + Amplificación · 15,5M impresiones · $1,56 CPM</div>
+  <div class="awareness-grid rv d1">
+    <div class="aw-cell">
+      <div class="aw-brand">L'Oréal Paris</div>
+      <div class="aw-stat"><div class="aw-num" style="color:var(--blue-l)">—</div><div class="aw-lbl">Impresiones</div></div>
+      <div class="aw-stat"><div class="aw-num" style="color:var(--gold)">—</div><div class="aw-lbl">Alcance</div></div>
+      <div class="aw-placeholder">CPM · pendiente marca</div>
+    </div>
+    <div class="aw-cell">
+      <div class="aw-brand">Garnier</div>
+      <div class="aw-stat"><div class="aw-num" style="color:var(--blue-l)">—</div><div class="aw-lbl">Impresiones</div></div>
+      <div class="aw-stat"><div class="aw-num" style="color:var(--gold)">—</div><div class="aw-lbl">Alcance</div></div>
+      <div class="aw-placeholder">CPM · pendiente marca</div>
+    </div>
+    <div class="aw-cell">
+      <div class="aw-brand">Maybelline</div>
+      <div class="aw-stat"><div class="aw-num" style="color:var(--blue-l)">—</div><div class="aw-lbl">Impresiones</div></div>
+      <div class="aw-stat"><div class="aw-num" style="color:var(--gold)">—</div><div class="aw-lbl">Alcance</div></div>
+      <div class="aw-placeholder">CPM · pendiente marca</div>
+    </div>
+    <div class="aw-cell">
+      <div class="aw-brand">NYX</div>
+      <div class="aw-stat"><div class="aw-num" style="color:var(--blue-l)">—</div><div class="aw-lbl">Impresiones</div></div>
+      <div class="aw-stat"><div class="aw-num" style="color:var(--gold)">—</div><div class="aw-lbl">Alcance</div></div>
+      <div class="aw-placeholder">CPM · pendiente marca</div>
+    </div>
+    <div class="aw-cell">
+      <div class="aw-brand">Vogue</div>
+      <div class="aw-stat"><div class="aw-num" style="color:var(--blue-l)">—</div><div class="aw-lbl">Impresiones</div></div>
+      <div class="aw-stat"><div class="aw-num" style="color:var(--gold)">—</div><div class="aw-lbl">Alcance</div></div>
+      <div class="aw-placeholder">CPM · pendiente marca</div>
+    </div>
+  </div>
+
+  <div class="insight rv d2"><p>CPD alcanzó <strong>4,67M de personas únicas</strong> con <strong>15,5M de impresiones</strong> a un CPM de <strong>$1,56</strong> — muy eficiente para awareness masivo. La derivación apuntó a <strong>Salco, Meli y Preunic</strong> como puntos de venta. El breakdown por marca está pendiente de la agencia.</p></div>
+
+  <div class="bp-section rv d3">
+    <div class="bp-section-label">Best Practices · CPD</div>
+    <div class="bp-grid">
+      <div class="bp"><div class="bp-t">Awareness como Objetivo Principal</div><ul><li>Priorizar 2P para maximizar alcance y cobertura en lanzamientos</li><li>CPM como KPI principal — no CTR ni conversión directa</li><li>Cada impresión es una oportunidad de construir marca</li></ul></div>
+      <div class="bp"><div class="bp-t">Audiencias 1P para Amplificar</div><ul><li>Activar 1P progresivamente en lower funnel para eficiencia</li><li>Los usuarios que enganchan en awareness pasan a ser data 1P</li><li>AON activo para sostener volumen de datos propios</li></ul></div>
+      <div class="bp"><div class="bp-t">Modelo de Alimentación</div><ul><li>2P captura → 1P activa → 0P convierte</li><li>CPD alimenta la base 1P de todo el ecosistema L'Oréal</li><li>Awareness hoy = intención mañana</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- LDB -->
+<section id="ldb">
+  <div class="div-header">
+    <div><div class="sec-label">División</div><div class="div-name">LDB</div></div>
+    <div class="div-info">L'Oréal Dermatológica<br>La Roche-Posay · Vichy · CeraVe · SkinCeuticals</div>
+  </div>
+  <div class="ctx rv"><p><strong>Cyber LDB</strong> priorizó inversión 0P y 1P en etapas mid/lower funnel. La estrategia fue eficiente gracias a activaciones de tráfico en Meta y <strong>Demand Gen en DV360</strong>. Las audiencias propias tuvieron CTR <em>6× mayor que las 2P</em>, priorizando calidad sobre volumen.</p></div>
+
+  <div class="metric-row rv d1">
+    <div class="mc"><div class="mc-badge pk">CTR Promedio 1P</div><div class="mc-delta up">↑ 6× vs 2P</div><div class="mc-val pk">1,84%</div><div class="mc-lbl">0P · FR · 1P combinadas</div><div class="mc-compare"><span class="v1">CPC promedio $0,12</span><span class="v2">2P → 0,3% CTR</span></div></div>
+    <div class="mc"><div class="mc-badge pk">CTR CRM Top</div><div class="mc-delta up">↑ Mejor audiencia</div><div class="mc-val pk">2,2%</div><div class="mc-lbl">BBDD Total La Roche-Posay</div><div class="mc-compare"><span class="v1">Qualified Visit Vichy → 2%+</span></div></div>
+    <div class="mc"><div class="mc-badge gr">DV360 · 1P</div><div class="mc-delta up">↑ Demand Gen</div><div class="mc-val gr">2,50%</div><div class="mc-lbl">CTR · CPC $0,04</div><div class="mc-compare"><span class="v1">Tráfico + Demand Gen</span></div></div>
+    <div class="mc"><div class="mc-badge bl">Top Fishing Rule</div><div class="mc-delta up">↑ Cross-brand</div><div class="mc-val bl">Kiehl's</div><div class="mc-lbl">FR hacia SkinCeuticals</div><div class="mc-compare"><span class="v1">L'Oréal Pro + Garnier también</span></div></div>
+  </div>
+
+  <div class="tab-nav rv d1">
+    <button class="tab-btn active" onclick="tab(this,'ldb-div')">División · Meta + DV360</button>
+    <button class="tab-btn" onclick="tab(this,'ldb-marcas')">Por Marca</button>
+    <button class="tab-btn" onclick="tab(this,'ldb-vs')">1P vs 2P</button>
+  </div>
+
+  <div class="tab-pane active" id="ldb-div">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-d);border:1px solid var(--gray-d)">
+      <div class="chart-card"><div class="chart-card-h">META · KPI's Audiencias <span class="pill m">0P · 1P · FR</span></div><div class="hbar-chart" id="hb-ldb-meta"></div><div class="chart-legend-row"><div class="leg"><div class="leg-b"></div>CPC (USD)</div><div class="leg"><div class="leg-d"></div>CTR (%)</div></div></div>
+      <div class="chart-card"><div class="chart-card-h">DV360 · KPI's Audiencias <span class="pill d">0P · 1P</span></div><div class="hbar-chart" id="hb-ldb-dv"></div><div class="chart-legend-row"><div class="leg"><div class="leg-b"></div>CPC (USD)</div><div class="leg"><div class="leg-d"></div>CTR (%)</div></div></div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="ldb-marcas">
+    <div class="brand-grid">
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">La Roche-Posay</div><span class="pill m" style="font-size:.55rem">Meta</span></div><div class="brand-tag">BBDD Total · Mejor performer del Cyber</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--pink)">2,18%</div><div class="bsl">CTR 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--blue-l)">$0,11</div><div class="bsl">CPC 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--white);opacity:.5">1,36%</div><div class="bsl">CTR FR</div></div></div><div class="hbar-chart" id="hb-lrp" style="margin-top:.5rem"></div><div class="best-aud"><strong>BBDD Total 0P</strong> — mayor intención. FR con afinidad limitada en LRP.</div></div>
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">Vichy</div><span class="pill m" style="font-size:.55rem">Meta</span></div><div class="brand-tag">BBDD + Qualified Visit · Equilibrio 0P / 1P</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--pink)">2,30%</div><div class="bsl">CTR 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--blue-l)">$0,09</div><div class="bsl">CPC 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--green)">2,23%</div><div class="bsl">CTR 1P</div></div></div><div class="hbar-chart" id="hb-vic" style="margin-top:.5rem"></div><div class="best-aud">Equilibrio ideal: <strong>BBDD Total + Qualified Visit Facebook</strong>. Balance entre base propia y visitantes activos.</div></div>
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">CeraVe</div><span class="pill m" style="font-size:.55rem">Meta</span></div><div class="brand-tag">BBDD Total · Objetivo Tráfico</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--pink)">1,77%</div><div class="bsl">CTR 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--blue-l)">$0,13</div><div class="bsl">CPC 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--white);opacity:.4">0,11%</div><div class="bsl">CTR 2P</div></div></div><div class="hbar-chart" id="hb-cer" style="margin-top:.5rem"></div><div class="best-aud">Mejor desempeño: <strong>BBDD total en campañas de tráfico</strong>. 2P muy bajo (0,11%) — data propia es la clave.</div></div>
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">SkinCeuticals</div><span class="pill m" style="font-size:.55rem">Meta</span></div><div class="brand-tag">FR Kiehl's + L'Oréal Pro · Cross-brand top</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--pink)">2,51%</div><div class="bsl">CTR 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--green)">2,54%</div><div class="bsl">CTR FR</div></div><div class="bstat"><div class="bsv" style="color:var(--white);opacity:.4">0,63%</div><div class="bsl">CTR 2P</div></div></div><div class="hbar-chart" id="hb-skin" style="margin-top:.5rem"></div><div class="best-aud">FR de <strong>visitantes Kiehl's + BBDD L'Oréal Pro</strong> equiparan a 0P. Cruces cross-brand validados.</div></div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="ldb-vs">
+    <div class="vs-grid">
+      <div class="vs-cell winner"><div class="vs-type">Audiencias 1P (0P + FR + 1P)</div><div class="vs-num pk">1,84%</div><div class="vs-sub">CTR promedio · <span style="color:var(--pink)">$0,12 CPC</span></div></div>
+      <div class="vs-cell loser"><div class="vs-type">Audiencias 2P (Externas)</div><div class="vs-num gg">0,30%</div><div class="vs-sub">CTR promedio · Objetivo: awareness</div></div>
+    </div>
+    <div class="insight"><p>La diferencia de <strong>6× en CTR</strong> no significa que las 2P sean malas — sirven para objetivos distintos. <strong>2P escala y nutre la base 1P. 1P convierte.</strong> El modelo correcto usa ambas en secuencia, no en competencia.</p></div>
+  </div>
+
+  <div class="bp-section rv d3">
+    <div class="bp-section-label">Best Practices · LDB</div>
+    <div class="bp-grid">
+      <div class="bp"><div class="bp-t">0P y 1P para Tráfico</div><ul><li>BBDD Total como audiencia anchor en tráfico mid-funnel</li><li>Qualified Visit de Facebook como señal de intención alta</li><li>Ajustar inversión al tamaño de audiencia para no saturar</li></ul></div>
+      <div class="bp"><div class="bp-t">Fishing Rules con Afinidad</div><ul><li>Kiehl's → SkinCeuticals: cruce validado, mantener</li><li>L'Oréal Pro y Garnier como fuentes adicionales</li><li>No activar FR sin evidencia de afinidad previa</li></ul></div>
+      <div class="bp"><div class="bp-t">2P para Nutrir la Base</div><ul><li>Usar 2P en awareness para ampliar universo</li><li>Los usuarios 2P que interactúan pasan a ser 1P</li><li>Mantener AON para no bajar volumen de data</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- DPP -->
+<section id="dpp">
+  <div class="div-header">
+    <div><div class="sec-label">División</div><div class="div-name">DPP</div></div>
+    <div class="div-info">División Profesional<br>L'Oréal Pro · Kérastase · Redken</div>
+  </div>
+  <div class="ctx rv"><p>En DPP el hallazgo clave es la <strong>complementariedad entre 1P y 2P</strong>: la data propia fue un <em>17% mejor en CTR</em>, pero las 2P fueron <em>40% más baratas en CPC</em>. La estrategia ganadora usa <strong>2P para escalar cobertura</strong> y <strong>1P para convertir tráfico hacia retail</strong>.</p></div>
+
+  <!-- D2C KÉRASTASE PURCHASES -->
+  <div class="sec-label rv d1" style="margin-bottom:.8rem">D2C Kérastase · Impacto Data 1P</div>
+  <div class="d2c-block rv d1">
+    <div class="d2c-inner">
+      <div class="d2c-stat"><div class="d2c-num" style="color:var(--blue-l)">143</div><div class="d2c-lbl">Purchases · Visitantes 1P</div><div class="d2c-sub">Mayor volumen · sitio web</div></div>
+      <div class="d2c-stat"><div class="d2c-num" style="color:var(--gold)">38</div><div class="d2c-lbl">Purchases · BBDD 0P</div><div class="d2c-sub">Base propia total</div></div>
+      <div class="d2c-stat"><div class="d2c-num" style="color:var(--green)">9</div><div class="d2c-lbl">Purchases · Compradores</div><div class="d2c-sub">BBDD activos · alto valor</div></div>
+      <div class="d2c-note"><p>Kérastase Cyber Junio: <strong>190 purchases totales con data 1PD</strong>. Los visitantes del sitio (1P) generaron el mayor volumen. La <strong>BBDD total fue el segundo driver</strong> — modelo diferenciado por objetivo validado en Cyber.</p></div>
+    </div>
+  </div>
+
+  <div class="metric-row rv d2">
+    <div class="mc"><div class="mc-badge pk">1P · Tráfico</div><div class="mc-delta up">↑ 17% mejor CTR</div><div class="mc-val pk">2,3%</div><div class="mc-lbl">CTR · CPC $0,15</div><div class="mc-compare"><span class="v1">Mayor intención, mejor usuario</span><span class="v2">2P → CPC 40% más barato</span></div></div>
+    <div class="mc"><div class="mc-badge pk">Google · 0P</div><div class="mc-delta up">↑ Demand Gen</div><div class="mc-val pk">3,58%</div><div class="mc-lbl">CTR · Demand Gen 0P</div><div class="mc-compare"><span class="v1">1P Google → 3,25%</span><span class="v2">Plataforma de intención</span></div></div>
+    <div class="mc"><div class="mc-badge gr">Top FR DPP</div><div class="mc-delta up">↑ Cross-brand</div><div class="mc-val gr">3,01%</div><div class="mc-lbl">CeraVe → L'Oréal Pro</div><div class="mc-compare"><span class="v1">Kiehl's → Redken también</span></div></div>
+    <div class="mc"><div class="mc-badge bl">2P · Escala</div><div class="mc-delta dn">↓ Costo optimizado</div><div class="mc-val bl">$0,09</div><div class="mc-lbl">CPC 2P · Tráfico</div><div class="mc-compare"><span class="v1">1,97% CTR · Rol: nutrir base</span><span class="v2">No reemplaza 1P</span></div></div>
+  </div>
+
+  <div class="tab-nav rv d2">
+    <button class="tab-btn active" onclick="tab(this,'dpp-div')">División · Meta + Google</button>
+    <button class="tab-btn" onclick="tab(this,'dpp-marcas')">Por Marca</button>
+    <button class="tab-btn" onclick="tab(this,'dpp-vs')">1P vs 2P</button>
+  </div>
+
+  <div class="tab-pane active" id="dpp-div">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-d);border:1px solid var(--gray-d)">
+      <div class="chart-card"><div class="chart-card-h">META · KPI's <span class="pill m">0P · 1P · FR</span></div><div class="hbar-chart" id="hb-dpp-meta"></div><div class="chart-legend-row"><div class="leg"><div class="leg-b"></div>CPC</div><div class="leg"><div class="leg-d"></div>CTR</div></div></div>
+      <div class="chart-card"><div class="chart-card-h">GOOGLE ADS · KPI's <span class="pill g">0P · 1P</span></div><div class="hbar-chart" id="hb-dpp-gads"></div><div class="chart-legend-row"><div class="leg"><div class="leg-b"></div>CPC</div><div class="leg"><div class="leg-d"></div>CTR</div></div></div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="dpp-marcas">
+    <div class="brand-grid">
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">L'Oréal Professionnel</div><span class="pill m" style="font-size:.55rem">Meta</span></div><div class="brand-tag">FR CeraVe + La Roche-Posay · Mayor afinidad</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--pink)">1,85%</div><div class="bsl">CTR 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--blue-l)">$0,15</div><div class="bsl">CPC 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--green)">1,90%</div><div class="bsl">CTR FR</div></div></div><div class="hbar-chart" id="hb-lop" style="margin-top:.5rem"></div><div class="best-aud">FR más efectiva: <strong>Visitantes CeraVe + BBDD La Roche-Posay</strong>. Marcas LDB de mayor afinidad hacia profesional.</div></div>
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">Kérastase ★</div><span class="pill m" style="font-size:.55rem">Meta</span></div><div class="brand-tag">BBDD diferenciada: Tráfico vs Ventas · Benchmark D2C</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--pink)">2,26%</div><div class="bsl">CTR 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--blue-l)">$0,18</div><div class="bsl">CPC 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--gold)">1,58%</div><div class="bsl">CTR 1P</div></div></div><div class="hbar-chart" id="hb-ker" style="margin-top:.5rem"></div><div class="best-aud">Estrategia diferenciada: <strong>BBDD Total + NonEngaged → ventas. BBDD compradores → tráfico.</strong> ×3 ventas vs. 2025.</div></div>
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">Redken · Meta</div><span class="pill m" style="font-size:.55rem">Meta</span></div><div class="brand-tag">1P + FR Kiehl's + Urban Decay</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--pink)">2,05%</div><div class="bsl">CTR 1P</div></div><div class="bstat"><div class="bsv" style="color:var(--blue-l)">$0,12</div><div class="bsl">CPC 1P</div></div><div class="bstat"><div class="bsv" style="color:var(--green)">2,14%</div><div class="bsl">CTR 2P</div></div></div><div class="hbar-chart" id="hb-red-meta" style="margin-top:.5rem"></div><div class="best-aud">FR con <strong>Kiehl's y Urban Decay</strong> mostraron alta afinidad. 2P competitiva por objetivo específico.</div></div>
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">Redken · Google</div><span class="pill g" style="font-size:.55rem">Google</span></div><div class="brand-tag">Demand Gen · 3,58% CTR 0P</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--pink)">3,58%</div><div class="bsl">CTR 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--blue-l)">$0,14</div><div class="bsl">CPC 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--green)">3,25%</div><div class="bsl">CTR 1P</div></div></div><div class="hbar-chart" id="hb-red-gads" style="margin-top:.5rem"></div><div class="best-aud">Google Ads confirma: <strong>data propia + plataformas de intención = combinación ganadora</strong>.</div></div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="dpp-vs">
+    <div class="vs-grid">
+      <div class="vs-cell winner"><div class="vs-type">Data 1P · CTR Tráfico</div><div class="vs-num pk">2,3%</div><div class="vs-sub">CTR · CPC $0,15 · <span style="color:var(--pink)">17% mejor engagement</span></div></div>
+      <div class="vs-cell" style="position:relative"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--green)"></div><div class="vs-type">Data 2P · CPC Tráfico</div><div class="vs-num" style="color:var(--green)">$0,09</div><div class="vs-sub">CPC · CTR 1,97% · <span style="color:var(--green)">40% más barato</span></div></div>
+    </div>
+    <div class="insight"><p>DPP revela que <strong>1P y 2P no se excluyen — se complementan</strong>. Las 2P amplían el universo a bajo costo, y los usuarios que enganchan pasan a ser data 1P. Las 1P convierten en retail. <strong>2P nutre. 1P cierra.</strong></p></div>
+  </div>
+
+  <div class="bp-section rv d3">
+    <div class="bp-section-label">Best Practices · DPP</div>
+    <div class="bp-grid">
+      <div class="bp"><div class="bp-t">Segmentar por Objetivo</div><ul><li>BBDD Total + NonEngaged → campañas de ventas</li><li>BBDD compradores → campañas de tráfico</li><li>Modelo Kérastase es el benchmark — replicar en Redken</li></ul></div>
+      <div class="bp"><div class="bp-t">FR Comprobadas</div><ul><li>CeraVe → L'Oréal Pro: 3,01% CTR — prioritario</li><li>Kiehl's → Redken: afinidad validada, escalar</li><li>Solo activar FR con evidencia de afinidad</li></ul></div>
+      <div class="bp"><div class="bp-t">Google Demand Gen</div><ul><li>Plataforma clave para 0P y 1P en DPP</li><li>3,58% CTR confirma potencial en campañas de intención</li><li>Meta para CPC eficiente en tráfico 1P</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- LUJO -->
+<section id="lujo">
+  <div class="div-header">
+    <div><div class="sec-label">División</div><div class="div-name">LUJO D2C</div></div>
+    <div class="div-info">División de Lujo · D2C<br>Lancôme · Kiehl's · Urban Decay · YSL</div>
+  </div>
+  <div class="ctx rv"><p>En D2C, Cyber confirmó que <em>la data propia es el mejor driver de intención</em>. Las audiencias 1PD tuvieron un CTR <strong>70% mejor</strong> y un CPC <strong>36% más barato</strong> que las 2P. El hallazgo estrella: <strong>Google Search con 1P alcanzó 17% CTR en Lancôme</strong> — el mayor registro de todo el Cyber.</p></div>
+
+  <!-- D2C LUJO PURCHASES -->
+  <div class="sec-label rv d1" style="margin-bottom:.8rem">D2C LUJO · Impacto Data 1P · Q1 2026</div>
+  <div class="d2c-block rv d1">
+    <div class="d2c-inner">
+      <div class="d2c-stat"><div class="d2c-num" style="color:var(--pink)">351</div><div class="d2c-lbl">Purchases Cyber Junio</div><div class="d2c-sub">Con data 1PD</div></div>
+      <div class="d2c-stat"><div class="d2c-num" style="color:var(--gold)">$27,9M</div><div class="d2c-lbl">Revenue + Taxes CLP</div><div class="d2c-sub">Cyber Junio 2026</div></div>
+      <div class="d2c-stat"><div class="d2c-num" style="color:var(--green)">×3,8</div><div class="d2c-lbl">vs. mismo período</div><div class="d2c-sub">1PD como driver</div></div>
+      <div class="d2c-note"><p>La <strong>BBDD de compradores de Lancôme</strong> fue la audiencia con mayor conversión (<strong>59 purchases</strong>). Kérastase lideró en volumen total con <strong>190 purchases</strong>. Kiehl's sumó <strong>42 purchases</strong>. <strong>Data propia = revenue directo demostrado.</strong></p></div>
+    </div>
+  </div>
+  <div class="sec-label rv d1" style="margin-bottom:.8rem;margin-top:1.5rem">Purchases por Marca · Breakdown Audiencias · Cyber Junio</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--gray-d);border:1px solid var(--gray-d);margin-bottom:2rem" class="rv d1">
+    <div style="background:var(--panel2);padding:1.6rem">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.2rem;color:var(--white);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem">Kérastase</div>
+      <div style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.12em;color:var(--white);opacity:.5;text-transform:uppercase;margin-bottom:1rem">190 purchases totales</div>
+      <div class="bstat-row">
+        <div class="bstat"><div class="bsv" style="color:var(--blue-l)">143</div><div class="bsl">Visitantes 1P</div></div>
+        <div class="bstat"><div class="bsv" style="color:var(--pink)">38</div><div class="bsl">BBDD 0P</div></div>
+        <div class="bstat"><div class="bsv" style="color:var(--gold)">9</div><div class="bsl">Compradores</div></div>
+      </div>
+      <div class="best-aud">Visitantes del sitio (1P) lideraron el volumen. <strong>BBDD total como segundo driver</strong> — modelo diferenciado validado.</div>
+    </div>
+    <div style="background:var(--panel2);padding:1.6rem;position:relative">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--pink)"></div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.2rem;color:var(--white);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem">Lancôme ★</div>
+      <div style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.12em;color:var(--pink);text-transform:uppercase;margin-bottom:1rem">119 purchases · Mayor conversión por audiencia</div>
+      <div class="bstat-row">
+        <div class="bstat"><div class="bsv" style="color:var(--blue-l)">51</div><div class="bsl">Visitantes 1P</div></div>
+        <div class="bstat"><div class="bsv" style="color:var(--pink)">9</div><div class="bsl">BBDD 0P</div></div>
+        <div class="bstat"><div class="bsv" style="color:var(--green)">59</div><div class="bsl">Compradores 0P</div></div>
+      </div>
+      <div class="best-aud"><strong>BBDD compradores → 59 purchases</strong>. La audiencia más eficiente del Cyber. Prueba definitiva del valor de la base propia.</div>
+    </div>
+    <div style="background:var(--panel2);padding:1.6rem">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.2rem;color:var(--white);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem">Kiehl's</div>
+      <div style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.12em;color:var(--white);opacity:.5;text-transform:uppercase;margin-bottom:1rem">42 purchases totales</div>
+      <div class="bstat-row">
+        <div class="bstat"><div class="bsv" style="color:var(--pink)">42</div><div class="bsl">Purchases 1PD</div></div>
+        <div class="bstat" style="opacity:.35"><div class="bsv" style="color:var(--gray-d)">—</div><div class="bsl">Sin breakdown</div></div>
+      </div>
+      <div class="best-aud">Purchases consolidadas con data 1PD. Breakdown por audiencia pendiente de agencia.</div>
+    </div>
+  </div>
+
+  <div class="metric-row rv d2">
+    <div class="mc"><div class="mc-badge pk">1P vs 2P</div><div class="mc-delta up">↑ 70% mejor CTR</div><div class="mc-val pk">4,4%</div><div class="mc-lbl">CTR Data 1P · CPC $0,14</div><div class="mc-compare"><span class="v1">CPC 36% más barato que 2P</span><span class="v2">2P → 2,6% CTR · $0,19 CPC</span></div></div>
+    <div class="mc"><div class="mc-badge gr">RÉCORD CYBER</div><div class="mc-delta up">↑ Máximo histórico</div><div class="mc-val gr">17%</div><div class="mc-lbl">CTR · Lancôme Search 1P</div><div class="mc-compare"><span class="v1">Google Search · sitio web 1P</span><span class="v2">Mayor CTR de todo el Cyber</span></div></div>
+    <div class="mc"><div class="mc-badge pk">Meta · 0P</div><div class="mc-delta up">↑ Alto valor</div><div class="mc-val pk">2,37%</div><div class="mc-lbl">CTR 0P · BBDD compradores</div><div class="mc-compare"><span class="v1">BBDD activos + inactivos + prospectos</span></div></div>
+    <div class="mc"><div class="mc-badge gr">Google · 1P</div><div class="mc-delta up">↑ DemandGen + Search</div><div class="mc-val gr">6,28%</div><div class="mc-lbl">CTR 1P · CPC $0,20</div><div class="mc-compare"><span class="v1">Sitio web + Add to Cart signal</span></div></div>
+  </div>
+
+  <div class="tab-nav rv d2">
+    <button class="tab-btn active" onclick="tab(this,'lujo-div')">División · Meta + Google</button>
+    <button class="tab-btn" onclick="tab(this,'lujo-marcas')">Lancôme + Kiehl's</button>
+    <button class="tab-btn" onclick="tab(this,'lujo-vs')">1P vs 2P</button>
+  </div>
+
+  <div class="tab-pane active" id="lujo-div">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-d);border:1px solid var(--gray-d)">
+      <div class="chart-card"><div class="chart-card-h">META · KPI's <span class="pill m">0P · 1P · FR</span></div><div class="hbar-chart" id="hb-lujo-meta"></div><div class="chart-legend-row"><div class="leg"><div class="leg-b"></div>CPC</div><div class="leg"><div class="leg-d"></div>CTR</div></div></div>
+      <div class="chart-card"><div class="chart-card-h">GOOGLE ADS · KPI's <span class="pill g">1P Search + DemGen</span></div><div class="hbar-chart" id="hb-lujo-gads"></div><div class="chart-legend-row"><div class="leg"><div class="leg-b"></div>CPC</div><div class="leg"><div class="leg-d"></div>CTR</div></div></div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="lujo-marcas">
+    <div class="brand-grid">
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">Lancôme · Meta</div><span class="pill m" style="font-size:.55rem">Meta</span></div><div class="brand-tag">2P → tráfico · 0P → conversión alto valor</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--pink)">2,45%</div><div class="bsl">CTR 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--gold)">3,11%</div><div class="bsl">CTR 2P</div></div><div class="bstat"><div class="bsv" style="color:var(--green)">2,99%</div><div class="bsl">CTR 1P</div></div></div><div class="hbar-chart" id="hb-lancome-meta" style="margin-top:.5rem"></div><div class="best-aud"><strong>2P lleva tráfico al sitio, 0P convierte.</strong> Clientes activos e inactivos muestran mayor conversión. 1P con Add to Cart fomenta compra directa.</div></div>
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">Lancôme · Google</div><span class="pill g" style="font-size:.55rem">Google</span></div><div class="brand-tag">17% CTR Search · Récord absoluto del Cyber</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--green)">17%</div><div class="bsl">CTR 1P</div></div><div class="bstat"><div class="bsv" style="color:var(--blue-l)">$0,08</div><div class="bsl">CPC 1P</div></div><div class="bstat"><div class="bsv" style="color:var(--white);opacity:.5">3,26%</div><div class="bsl">CTR 2P</div></div></div><div class="hbar-chart" id="hb-lancome-gads" style="margin-top:.5rem"></div><div class="best-aud"><strong>Google Search con 1P es la combinación ganadora del Cyber.</strong> Intención de búsqueda + data propia = máxima relevancia.</div></div>
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">Kiehl's · Meta</div><span class="pill m" style="font-size:.55rem">Meta</span></div><div class="brand-tag">FR Redken · Alta afinidad cross-brand</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--pink)">2,17%</div><div class="bsl">CTR 0P</div></div><div class="bstat"><div class="bsv" style="color:var(--gold)">2,37%</div><div class="bsl">CTR 2P</div></div><div class="bstat"><div class="bsv" style="color:var(--blue-l)">2,12%</div><div class="bsl">CTR FR</div></div></div><div class="hbar-chart" id="hb-kiehls-meta" style="margin-top:.5rem"></div><div class="best-aud">FR con <strong>BBDD Redken</strong> valida alta afinidad. Todas las audiencias en rango similar — base madura y sólida.</div></div>
+      <div class="brand-cell"><div class="brand-h"><div class="brand-name">Kiehl's · Google</div><span class="pill g" style="font-size:.55rem">Google</span></div><div class="brand-tag">4,33% CTR · 1P All Converters</div><div class="bstat-row"><div class="bstat"><div class="bsv" style="color:var(--pink)">4,33%</div><div class="bsl">CTR 1P</div></div><div class="bstat"><div class="bsv" style="color:var(--blue-l)">$0,17</div><div class="bsl">CPC 1P</div></div><div class="bstat"><div class="bsv" style="color:var(--white);opacity:.5">1,78%</div><div class="bsl">CTR 2P</div></div></div><div class="hbar-chart" id="hb-kiehls-gads" style="margin-top:.5rem"></div><div class="best-aud"><strong>All Users + All Converters</strong> como audiencias anchor. 1P rinde 2,4× más que 2P en Google.</div></div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="lujo-vs">
+    <div class="vs-grid">
+      <div class="vs-cell winner"><div class="vs-type">Data 1P · LUJO D2C</div><div class="vs-num pk">4,4%</div><div class="vs-sub">CTR · CPC $0,14 · <span style="color:var(--pink)">70% mejor CTR · 36% más barato</span></div></div>
+      <div class="vs-cell loser"><div class="vs-type">Data 2P · LUJO D2C</div><div class="vs-num gg">2,6%</div><div class="vs-sub">CTR · CPC $0,19 · Rol: alcance y tráfico</div></div>
+    </div>
+    <div class="insight"><p>En D2C, donde el ciclo de compra es directo, la diferencia entre 1P y 2P es más pronunciada. <strong>El usuario de tu propia base tiene mayor probabilidad de comprar</strong> — ya tiene relación con la marca, ya confía en el canal. <strong>17% CTR en Lancôme Search es el proof of concept definitivo.</strong></p></div>
+  </div>
+
+  <div class="bp-section rv d3">
+    <div class="bp-section-label">Best Practices · LUJO D2C</div>
+    <div class="bp-grid">
+      <div class="bp"><div class="bp-t">0P para Alto Valor</div><ul><li>Activar BBDD totales, activos, inactivos y prospectos</li><li>Segmentar por estado → mensajes diferenciados</li><li>Mayor conversión en campañas D2C con incentivos</li></ul></div>
+      <div class="bp"><div class="bp-t">Google Search + 1P</div><ul><li>1P de sitio web en Search → 17% CTR validado</li><li>Add to Cart como señal de alta intención</li><li>All Users + All Converters como audiencias anchor</li></ul></div>
+      <div class="bp"><div class="bp-t">FR con Evidencia</div><ul><li>Kiehl's → Redken: comprobado, mantener y escalar</li><li>Lancôme → visitantes Kérastase: segunda más eficiente</li><li>No activar FR sin evidencia de afinidad previa</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl">L'ORÉAL CHILE · DDX</div>
+  <div class="fr">DATA AUDIENCIAS · CYBER MAYO / JUNIO 2026 · CONFIDENCIAL C1</div>
+</footer>
+</div>
+
+<script>
+/* PARTICLES */
+const cvs=document.getElementById('particles'),pctx=cvs.getContext('2d');
+let W,H,pts=[];
+function resize(){W=cvs.width=innerWidth;H=cvs.height=innerHeight}
+function initPts(){pts=Array.from({length:50},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,r:Math.random()*1.3+.3,a:Math.random()}))}
+function drawPts(){pctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;pctx.beginPath();pctx.arc(p.x,p.y,p.r,0,Math.PI*2);pctx.fillStyle=`rgba(233,30,140,${p.a*.4})`;pctx.fill()});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<100){pctx.beginPath();pctx.moveTo(pts[i].x,pts[i].y);pctx.lineTo(pts[j].x,pts[j].y);pctx.strokeStyle=`rgba(233,30,140,${(1-d/100)*.07})`;pctx.lineWidth=.5;pctx.stroke()}}requestAnimationFrame(drawPts)}
+resize();initPts();drawPts();
+window.addEventListener('resize',()=>{resize();initPts()});
+
+/* CURSOR */
+const cur=document.getElementById('cursor'),cring=document.getElementById('cring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function ac(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cring.style.left=rx+'px';cring.style.top=ry+'px';requestAnimationFrame(ac)})();
+
+/* REVEAL */
+const rvObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.07});
+document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
+
+/* CARD STAGGER */
+const cObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){setTimeout(()=>{e.target.style.opacity='1';e.target.style.transform='none'},70*(+e.target.dataset.i||0));cObs.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.mc,.brand-cell,.bp,.d2c-stat,.aw-cell').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(18px)';el.style.transition='opacity .5s ease,transform .5s ease';el.dataset.i=i%5;cObs.observe(el)});
+
+/* SIDE NAV */
+secs=document.querySelectorAll('section[id]');
+navAs=document.querySelectorAll('.side-nav a');
+secs.forEach(s=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navAs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+s.id))}),{threshold:.35}).observe(s));
+
+/* TABS */
+function tab(btn,id){
+  const sec=btn.closest('section');
+  sec.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  sec.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(id).classList.add('active');
+  setTimeout(renderAllCharts,60);
+}
+
+/* CHART ENGINE */
+function renderHBar(containerId,data){
+  const el=document.getElementById(containerId);
+  if(!el||!el.offsetParent)return;
+  el.innerHTML='';
+  const maxCpc=Math.max(...data.map(d=>d.cpc))*1.5||.5;
+  const maxCtr=Math.max(...data.map(d=>d.ctr))*1.5||.05;
+  data.forEach(d=>{
+    const cpcPct=Math.min(100,(d.cpc/maxCpc)*100);
+    const ctrPct=Math.min(96,(d.ctr/maxCtr)*100);
+    const ctrColor=d.ctr>=.02?'var(--pink)':d.ctr>=.015?'var(--gold)':'var(--white)';
+    const row=document.createElement('div');
+    row.className='hbar-row';
+    row.innerHTML=`<div class="hbar-label">${d.label}</div><div class="hbar-track"><div class="hbar-fill" data-w="${cpcPct}" style="width:0%"></div><div class="hbar-ctr" style="left:calc(${ctrPct}% - 4px);background:${ctrColor}"><div class="hbar-ctr-label" style="color:${ctrColor}">${(d.ctr*100).toFixed(2).replace('.',',')}%</div></div></div><div class="hbar-val">$${d.cpc.toFixed(2)}</div>`;
+    el.appendChild(row);
+  });
+  setTimeout(()=>el.querySelectorAll('.hbar-fill').forEach(b=>b.style.width=b.dataset.w+'%'),100);
+}
+
+const CHARTS={
+  'hb-ldb-meta': [{label:'0P',cpc:.14,ctr:.0215},{label:'1P',cpc:.10,ctr:.0175},{label:'FR',cpc:.20,ctr:.0177}],
+  'hb-ldb-dv':   [{label:'0P',cpc:.04,ctr:.0200},{label:'1P',cpc:.04,ctr:.0250}],
+  'hb-lrp':      [{label:'0P',cpc:.11,ctr:.0218},{label:'1P',cpc:.10,ctr:.0141},{label:'2P',cpc:.09,ctr:.0009},{label:'FR',cpc:.09,ctr:.0136}],
+  'hb-vic':      [{label:'0P',cpc:.09,ctr:.0230},{label:'1P',cpc:.09,ctr:.0223},{label:'2P',cpc:.27,ctr:.0019}],
+  'hb-cer':      [{label:'0P',cpc:.13,ctr:.0177},{label:'1P',cpc:.11,ctr:.0133},{label:'2P',cpc:.11,ctr:.0011},{label:'FR',cpc:.11,ctr:.0115}],
+  'hb-skin':     [{label:'0P',cpc:.17,ctr:.0251},{label:'2P',cpc:.11,ctr:.0063},{label:'FR',cpc:.21,ctr:.0254}],
+  'hb-dpp-meta': [{label:'0P',cpc:.17,ctr:.0216},{label:'1P',cpc:.11,ctr:.0165},{label:'FR',cpc:.14,ctr:.0191}],
+  'hb-dpp-gads': [{label:'0P',cpc:.14,ctr:.0358},{label:'1P',cpc:.15,ctr:.0325}],
+  'hb-lop':      [{label:'0P',cpc:.15,ctr:.0185},{label:'2P',cpc:.08,ctr:.0180},{label:'FR',cpc:.13,ctr:.0190}],
+  'hb-ker':      [{label:'0P',cpc:.18,ctr:.0226},{label:'1P',cpc:.11,ctr:.0158}],
+  'hb-red-meta': [{label:'1P',cpc:.12,ctr:.0205},{label:'2P',cpc:.09,ctr:.0214},{label:'FR',cpc:.15,ctr:.0200}],
+  'hb-red-gads': [{label:'0P',cpc:.14,ctr:.0358},{label:'1P',cpc:.15,ctr:.0325}],
+  'hb-lujo-meta':[{label:'0P',cpc:.14,ctr:.0237},{label:'1P',cpc:.18,ctr:.0213},{label:'FR',cpc:.15,ctr:.0211}],
+  'hb-lujo-gads':[{label:'1P',cpc:.20,ctr:.0628}],
+  'hb-lancome-meta':[{label:'0P',cpc:.12,ctr:.0245},{label:'2P',cpc:.12,ctr:.0311},{label:'1P',cpc:.14,ctr:.0299},{label:'FR',cpc:.11,ctr:.0211}],
+  'hb-lancome-gads':[{label:'1P',cpc:.08,ctr:.1700},{label:'2P',cpc:.11,ctr:.0326}],
+  'hb-kiehls-meta':[{label:'0P',cpc:.20,ctr:.0217},{label:'2P',cpc:.16,ctr:.0237},{label:'FR',cpc:.18,ctr:.0212}],
+  'hb-kiehls-gads':[{label:'1P',cpc:.17,ctr:.0433},{label:'2P',cpc:.38,ctr:.0178}],
+};
+function renderAllCharts(){Object.entries(CHARTS).forEach(([id,data])=>{const el=document.getElementById(id);if(el&&el.offsetParent!==null)renderHBar(id,data)})}
+window.addEventListener('load',()=>setTimeout(renderAllCharts,200));
+window.addEventListener('resize',()=>setTimeout(renderAllCharts,150));
+
+/* COMPARE TOOL */
+const COMPARE_DATA={
+  ldb:{left:{label:'Data 1P · 0P + FR + 1P',metrics:[{name:'CTR Promedio',v1:1.84,v2:.30,unit:'%',max:3},{name:'CPC Promedio',v1:.12,v2:.35,unit:'$',max:.5,invert:true},{name:'Eficiencia relativa',v1:100,v2:16,unit:'',max:100}]},right:{label:'Data 2P · Externa'},insight:'6× más CTR con data propia · Las 2P sirven para escalar y nutrir la base 1P, no para convertir directamente.'},
+  dpp:{left:{label:'Data 1P · Tráfico',metrics:[{name:'CTR',v1:2.30,v2:1.97,unit:'%',max:4},{name:'CPC',v1:.15,v2:.09,unit:'$',max:.3,invert:true},{name:'Calidad usuario',v1:100,v2:82,unit:'',max:100}]},right:{label:'Data 2P · Tráfico'},insight:'1P: 17% mejor CTR · 2P: 40% más barato en CPC · Úsalas en secuencia: 2P escala, 1P convierte.'},
+  lujo:{left:{label:'Data 1P · LUJO D2C',metrics:[{name:'CTR Tráfico',v1:4.40,v2:2.60,unit:'%',max:6},{name:'CPC Tráfico',v1:.14,v2:.19,unit:'$',max:.3,invert:true},{name:'Ventaja CTR',v1:100,v2:59,unit:'',max:100}]},right:{label:'Data 2P · LUJO D2C'},insight:'70% mejor CTR · 36% más barato CPC · En D2C, el usuario propio tiene mayor probabilidad de compra directa.'}
+};
+function showCompare(key,btn){
+  document.querySelectorAll('.csel').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const d=COMPARE_DATA[key];
+  const display=document.getElementById('compare-display');
+  display.innerHTML=`
+    <div class="compare-side">
+      <div class="compare-side-label">${d.left.label}</div>
+      ${d.left.metrics.map(m=>{const pct=(m.v1/m.max)*100;const color=m.invert?'var(--green)':'var(--pink)';return`<div class="compare-metric"><div class="cm-name">${m.name}</div><div class="cm-bar-wrap"><div class="cm-bar" data-w="${pct}" style="width:0%;background:${color}"></div></div><div class="cm-val" style="color:${color}">${m.unit==='$'?'$':''}${m.v1}${m.unit==='%'?'%':''}</div></div>`}).join('')}
+    </div>
+    <div class="compare-side" style="opacity:.5">
+      <div class="compare-side-label">${d.right.label}</div>
+      ${d.left.metrics.map(m=>{const pct=(m.v2/m.max)*100;return`<div class="compare-metric"><div class="cm-name">${m.name}</div><div class="cm-bar-wrap"><div class="cm-bar" data-w="${pct}" style="width:0%;background:var(--gray-d)"></div></div><div class="cm-val">${m.unit==='$'?'$':''}${m.v2}${m.unit==='%'?'%':''}</div></div>`}).join('')}
+    </div>`;
+  document.getElementById('compare-insight').textContent='→ '+d.insight;
+  setTimeout(()=>display.querySelectorAll('.cm-bar').forEach(b=>b.style.width=b.dataset.w+'%'),80);
+}
+setTimeout(()=>showCompare('ldb',document.querySelector('.csel.active')),300);
+</script>
+</body>
+</html>
